@@ -1,0 +1,22 @@
+{
+  "name": "infera",
+  "version": "1.0.0",
+  "description": "Define your app by interfaces. Let Infera infer the rest.",
+  "private": true,
+  "workspaces": [
+    "docs"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DimitrijeGlibic/infera.git"
+  },
+  "author": "Dimitrije Glibic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DimitrijeGlibic/infera/issues"
+  },
+  "homepage": "https://github.com/DimitrijeGlibic/infera#readme"
+}
