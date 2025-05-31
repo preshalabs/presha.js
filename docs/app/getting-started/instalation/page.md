@@ -3,7 +3,7 @@
 ## Installation Command
 
 ```bash
-npm install infera
+npm install presha
 ```
 
 ## Optional Setup
@@ -11,7 +11,7 @@ npm install infera
 To scaffold a new project:
 
 ```bash
-npx infera init my-app
+npx presha init my-app
 cd my-app
 npm install
 ```

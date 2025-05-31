@@ -1,16 +1,16 @@
-# Infera
-> Define your app by interfaces. Let Infera infer the rest.
+# Presha.js
+> Presha is no pressure.
 
-Infera is a TypeScript-based backend framework that turns interfaces into fully functional REST APIs, validation schemas, and database models. It minimizes boilerplate by using interfaces as the single source of truth, enabling fast, scalable, and type-safe API development.
+Presha is a TypeScript-based backend framework that turns interfaces into fully functional REST APIs, validation schemas, and database models. It minimizes boilerplate by using interfaces as the single source of truth, enabling fast, scalable, and type-safe API development.
 
 ## 💻 How to use? 
 
-1. `npm install` infera
-2. `infera init`               ⟶ generates config + base dirs
-3. `infera dev`                ⟶ watches for interface changes, hot-generates code
+1. `npm install` preshajs
+2. `preshajs init`               ⟶ generates config + base dirs
+3. `preshajs dev`                ⟶ watches for interface changes, hot-generates code
 4. define interfaces         ⟶ in `models/`
-5. `infera generate`           ⟶ regenerates API, Zod, DB models
-6. `infera start`              ⟶ boots up server
+5. `preshajs generate`           ⟶ regenerates API, Zod, DB models
+6. `preshajs start`              ⟶ boots up server
 7. access `/api/users`, etc.
 
 ## ⚡ Performance & Scalability
@@ -19,10 +19,10 @@ Infera is a TypeScript-based backend framework that turns interfaces into fully 
 - Only regenerate changed files
 - CLI commands separate from runtime logic (for clean DX)
 
-## 🧱 Infera High-Level Architecture
+## 🧱 Presha High-Level Architecture
 
 ```
-📦 infera/
+📦 presha.js/
 ├── cli/                 # CLI entry point and commands
 ├── core/                # Core logic for parsing, generating, and managing modules
 │   ├── parser/          # ts-morph-based interface parser
@@ -35,14 +35,14 @@ Infera is a TypeScript-based backend framework that turns interfaces into fully 
 ├── sdk/                 # Client SDK generator (future)
 ├── docs/                # Swagger/OpenAPI auto-generator (future)
 ├── tests/               # Test auto-generator (future)
-├── examples/            # Example Infera projects
+├── examples/            # Example Presha projects
 └── index.ts             # Entrypoint for library users
 ```
 
 ### ✅ Modular Layers (Separation of Concerns)
 
 #### 1. CLI Layer (cli/)
-    - Handles infera init, infera dev, infera generate
+    - Handles presha init, presha dev, presha generate
     - Guides user through setup (DB, paths, etc.)
     - Uses commander, enquirer, or prompts
 
