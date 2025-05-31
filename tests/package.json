@@ -1,0 +1,14 @@
+{
+  "name": "presha-tests",
+  "version": "0.0.1",
+  "description": "Tests for presha framework",
+  "main": "helloWorld.js",
+  "scripts": {
+    "test": "node helloWorld.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "presha": "^0.0.1"
+  }
+}
