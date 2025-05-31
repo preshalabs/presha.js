@@ -1,3 +1,7 @@
+> 🚧 **Work in Progress**  
+> Presha.js is in early development and subject to change. 
+> That said — feel free to explore, open issues, or even submit PRs! We'd love to hear what you think.
+
 # Presha.js
 > Presha is no pressure.
 
