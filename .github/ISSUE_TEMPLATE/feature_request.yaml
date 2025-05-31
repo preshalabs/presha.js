@@ -1,0 +1,36 @@
+name: 💡 Feature Request
+description: Suggest an idea for this project
+title: "[Feature]: "
+labels: ["enhancement"]
+assignees:
+  - ''
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Share your feature idea with us! Try to be specific and explain the benefit.
+
+  - type: input
+    id: motivation
+    attributes:
+      label: What problem does this solve?
+      description: Explain what use case or problem this feature addresses
+      placeholder: e.g. "Avoid writing repetitive route code"
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Describe the solution you'd like
+      description: A clear description of what you want to happen
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Describe alternatives you've considered
+      description: Other ways you've thought about solving this problem
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Add any other information like mockups, related issues, or ideas

@@ -1,0 +1,59 @@
+name: 🐛 Bug Report
+description: Report a bug to help us improve the framework
+title: "[Bug]: "
+labels: ["bug"]
+assignees:
+  - ''
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill out this form to help us fix the issue faster.
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Node.js version, OS, package version, etc.
+      placeholder: "e.g. Node.js 20.5, macOS 14.4"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the unexpected behavior
+      placeholder: A clear and concise description of what the bug is
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Include code snippets, commands, or a minimal example
+      placeholder: |
+        1. Run `npm start`
+        2. Call the endpoint /api/example
+        3. Observe error in terminal
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+      description: Describe the correct behavior
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs, errors or screenshots
+      description: Paste relevant logs or screenshots here
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Any other information or links that might help
