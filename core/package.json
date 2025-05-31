@@ -1,0 +1,19 @@
+{
+  "name": "presha",
+  "version": "0.0.1",
+  "description": "A minimal node.js framework built for clean architecture and low-pressure development.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/preshalabs/presha.js.git"
+  },
+  "author": "preshalabs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/preshalabs/presha.js/issues"
+  },
+  "homepage": "https://github.com/preshalabs/presha.js#readme"
+}
