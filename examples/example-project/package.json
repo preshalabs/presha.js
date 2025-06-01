@@ -4,8 +4,13 @@
   "description": "Cornerstone of presha.js framework development",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "presha dev",
+    "build": "presha build",
+    "start": "presha start"
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "presha": "^0.0.2"
+  }
 }
