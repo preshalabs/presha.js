@@ -87,3 +87,6 @@ Presha is a TypeScript-based backend framework that turns interfaces into fully 
 | 🔧 SDK   | Client SDK (e.g. `useUsers()` React hooks)  | `sdk/`                 |
 | 🌐 UI    | Admin UI generator (like Supabase/Refine)   | `ui/` (optional later) |
 
+## 🌅 Origin
+
+> This framework was born on an evening of peace — on a balcony, with a beer in hand, and a decision to stop criticizing myself in order to grow. From now on, I build because I love it.
