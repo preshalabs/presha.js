@@ -1,6 +1,6 @@
 {
   "name": "presha",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A minimal node.js framework built for clean architecture and low-pressure development.",
   "scripts": {
     "build": "tsup",
