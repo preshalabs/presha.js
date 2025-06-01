@@ -11,6 +11,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "presha": "^0.0.1"
+    "presha": "^0.0.2"
   }
 }
