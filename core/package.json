@@ -4,7 +4,8 @@
   "description": "A minimal node.js framework built for clean architecture and low-pressure development.",
   "scripts": {
     "build": "tsup",
-    "dev": "tsup --watch"
+    "dev": "tsup --watch",
+    "lint": "npx prettier . --write"
   },
   "repository": {
     "type": "git",
