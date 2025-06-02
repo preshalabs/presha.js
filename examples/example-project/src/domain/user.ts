@@ -14,11 +14,11 @@
  * or it may not be picked up by the framework's parser.
  */
 export interface User {
-    id: string;
-    email: string;
-    name?: string;
-    createdAt: Date;
-    updatedAt: Date;
+  id: string;
+  email: string;
+  name?: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 /**
@@ -30,38 +30,38 @@ export interface User {
  * If omitted, the framework will simply skip hook execution.
  */
 export const hooks = {
-    beforeCreate: async (data: Partial<User>) => {
-        if (!data.email?.includes('@')) {
-        throw new Error('Invalid email');
-        }
-        console.log('[User.beforeCreate]', data);
-    },
-
-    afterCreate: async (user: User) => {
-        console.log('[User.afterCreate]', user.id);
-    },
-
-    beforeUpdate: async (data: Partial<User>) => {
-        console.log('[User.beforeUpdate]', data);
-    },
-
-    afterUpdate: async (user: User) => {
-        console.log('[User.afterUpdate]', user.id);
-    },
-
-    beforeDelete: async (id: string) => {
-        console.log('[User.beforeDelete]', id);
-    },
-
-    afterDelete: async (id: string) => {
-        console.log('[User.afterDelete]', id);
-    },
-
-    beforeRead: async (id: string) => {
-        console.log('[User.beforeRead]', id);
-    },
-
-    afterRead: async (user: User | null) => {
-        console.log('[User.afterRead]', user?.id ?? 'not found');
+  beforeCreate: async (data: Partial<User>) => {
+    if (!data.email?.includes('@')) {
+      throw new Error('Invalid email');
     }
+    console.log('[User.beforeCreate]', data);
+  },
+
+  afterCreate: async (user: User) => {
+    console.log('[User.afterCreate]', user.id);
+  },
+
+  beforeUpdate: async (data: Partial<User>) => {
+    console.log('[User.beforeUpdate]', data);
+  },
+
+  afterUpdate: async (user: User) => {
+    console.log('[User.afterUpdate]', user.id);
+  },
+
+  beforeDelete: async (id: string) => {
+    console.log('[User.beforeDelete]', id);
+  },
+
+  afterDelete: async (id: string) => {
+    console.log('[User.afterDelete]', id);
+  },
+
+  beforeRead: async (id: string) => {
+    console.log('[User.beforeRead]', id);
+  },
+
+  afterRead: async (user: User | null) => {
+    console.log('[User.afterRead]', user?.id ?? 'not found');
+  }
 };

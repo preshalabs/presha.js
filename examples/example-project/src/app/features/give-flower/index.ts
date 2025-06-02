@@ -12,7 +12,7 @@ export const route = {
   path: '/flowers/give',
 
   handler: async (ctx: any) => {
-    const body = await ctx.json() as {
+    const body = (await ctx.json()) as {
       toUserId: string;
       flowerId: string;
     };

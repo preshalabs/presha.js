@@ -2,7 +2,7 @@ import type { User } from '@/domain/user';
 
 /**
  * Minimal login route.
- * 
+ *
  * Input is assumed to be validated against the User model.
  */
 export const route = {
@@ -10,7 +10,7 @@ export const route = {
   path: '/auth/login',
 
   handler: async (ctx: any) => {
-    const body = await ctx.json() as Partial<User>;
+    const body = (await ctx.json()) as Partial<User>;
 
     // Business logic: fake login check
     if (body.email === 'admin@example.com' && body.password === 'password123') {
