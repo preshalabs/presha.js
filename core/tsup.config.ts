@@ -1,7 +1,7 @@
-import { defineConfig } from 'tsup';
+import { defineConfig } from 'tsup'
 
 export default defineConfig({
-entry: { index: 'cli/index.ts' },
+  entry: { index: 'cli/index.ts' },
   format: ['cjs'],
   splitting: false,
   sourcemap: true,
@@ -10,6 +10,6 @@ entry: { index: 'cli/index.ts' },
   target: 'node18',
   outDir: 'dist',
   banner: {
-    js: '#!/usr/bin/env node',
-  },
-});
+    js: '#!/usr/bin/env node'
+  }
+})

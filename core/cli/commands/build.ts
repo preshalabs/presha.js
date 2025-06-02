@@ -1,5 +1,7 @@
-export function runBuild() {
-    console.log('📦 Building for production...');
-    // TODO: bundle app + prepare for deploy
-  }
-  
+import { buildProject } from '../../generator'
+
+export async function runBuild() {
+  console.log('🔧 Building project...')
+  await buildProject()
+  console.log('✅ Build completed.')
+}

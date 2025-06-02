@@ -12,7 +12,7 @@
 ## 🚀 Features
 
 - 🧱 Zero boilerplate
-Define your data models and business logic — presha generates the rest.
+  Define your data models and business logic — presha generates the rest.
 
 - 🧩 Automatic API & validation CRUD routes and validation from your TypeScript interfaces.
 
@@ -21,10 +21,10 @@ Define your data models and business logic — presha generates the rest.
 - 📚 Docs out of the box. OpenAPI/Swagger documentation generated directly from your models. (coming soon)
 
 - 🧠 AI-friendly structure
-Minimal code, consistent structure — ideal for code generation and AI pair programming.
+  Minimal code, consistent structure — ideal for code generation and AI pair programming.
 
 - 🧩 Distinction between domain and app layer
-Cleanly separates your domain models (models/) from application logic (src/), following clean architecture principles.
+  Cleanly separates your domain models (models/) from application logic (src/), following clean architecture principles.
 
 ## 📦 Installation
 
@@ -50,11 +50,13 @@ npm install presha
 ```
 
 ## 🛠 CLI Usage
+
 ```bash
 presha dev     # Start the development server
 presha build   # Generate code & prepare for production
 presha start   # Run your built app
 ```
+
 You can also use npm scripts:
 
 ```json
@@ -67,8 +69,6 @@ You can also use npm scripts:
 }
 ```
 
-
 ## 🤝 Contributing
 
 Please see the [CONTRIBUTING.md](./../CONTRIBUTING.md) file for guidelines.
-

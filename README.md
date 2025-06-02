@@ -27,8 +27,8 @@ Presha is a TypeScript-based backend framework that turns interfaces into fully 
 
 ```
 📦 presha.js/
-├── cli/                 # CLI entry point and commands
 ├── core/                # Core logic for parsing, generating, and managing modules
+|   ├── cli/                 # CLI entry point and commands
 │   ├── parser/          # ts-morph-based interface parser
 │   ├── generator/       # Generates zod, API routes, db models
 │   ├── runtime/         # Request handling, validation, routing
