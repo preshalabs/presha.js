@@ -1,6 +1,6 @@
 import { AppRouteMeta } from '../../types/AppMeta';
 import path from 'path';
-import { writeToFile } from '../utils';
+import { writeToFile } from '../utils/utils';
 
 export async function generateRouteBindings(routes: AppRouteMeta[]) {
   const outputDir = path.resolve('src/generated/routes');

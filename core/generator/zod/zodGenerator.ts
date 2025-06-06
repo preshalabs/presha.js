@@ -1,5 +1,5 @@
 import { ModelMeta } from '../../types/ModelMeta';
-import { writeToFile } from '../utils';
+import { writeToFile } from '../utils/utils';
 import path from 'path';
 
 export async function generateZodSchemas(models: ModelMeta[]) {
