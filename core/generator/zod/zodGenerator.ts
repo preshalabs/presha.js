@@ -14,7 +14,7 @@ export async function generateZodSchemas(models: ModelMeta[]) {
 }
 
 function generateZodFromModel(model: ModelMeta): string {
-  const lines = model.properties.map(p => {
+  const lines = model.properties.map((p) => {
     const base = `z.${tsTypeToZod(p.type)}`;
     return `  ${p.name}: ${base}${p.optional ? '.optional()' : ''},`;
   });
@@ -28,7 +28,7 @@ function tsTypeToZod(type: string): string {
     number: 'number()',
     boolean: 'boolean()',
     Date: 'date()',
-    any: 'any()',
+    any: 'any()'
   };
   return map[type] || 'any()';
 }
