@@ -21,11 +21,6 @@ Please check all that apply:
 - [ ] I have added or updated necessary documentation
 - [ ] I have added appropriate tests (if applicable)
 - [ ] I followed the coding standards and linting rules
-- [ ] I have added meaningful commit messages
-
-## 📸 Screenshots / Demo (if UI-related)
-
-<!-- If this PR includes UI changes, please add before/after screenshots or recordings -->
 
 ## 📝 Additional Context
 
