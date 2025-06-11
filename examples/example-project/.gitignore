@@ -2,3 +2,4 @@ node_modules
 
 # Build output, for now inside src/generated
 src/generated
+dist
