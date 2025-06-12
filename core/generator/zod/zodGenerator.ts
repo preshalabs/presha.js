@@ -19,7 +19,7 @@ function generateZodFromModel(model: ModelMeta): string {
     return `  ${p.name}: ${base}${p.optional ? '.optional()' : ''},`;
   });
 
-  return `import { z } from 'zod';\n\nexport const ${model.name}Schema = z.object({\n${lines.join('\n')}\n});\n`;
+  return `import { z } from 'presha/zod';\n\nexport const ${model.name}Schema = z.object({\n${lines.join('\n')}\n});\n`;
 }
 
 function tsTypeToZod(type: string): string {

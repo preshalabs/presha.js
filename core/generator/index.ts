@@ -7,12 +7,10 @@ import { generateDbModels } from './db/dbGenerator';
 import { ProjectMeta } from '../types/ProjectMeta';
 
 export async function generateAll(projectMeta: ProjectMeta) {
-  console.log('🔧 Building project from project meta: ', projectMeta);
+  const { domain } = projectMeta;
 
-  const { domain, app } = projectMeta;
-
-  await generateZodSchemas(domain);
-  await generateDbModels(domain);
+  // await generateZodSchemas(domain);
+  // await generateDbModels(domain);
   await generateCrudRoutesForModels(domain);
-  await generateRouteBindings(app);
+  await generateRouteBindings(projectMeta);
 }

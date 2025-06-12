@@ -11,9 +11,8 @@ export async function generateCrudRoutesForModels(models: ModelMeta[]) {
     const idParam = 'id'; // assumed primary key name
 
     const code = `
-import { Router } from 'express';
-
-const router = Router();
+import { express } from 'presha/runtime/express';
+const router = express.Router();
 
 router.get('/${plural}', async (req, res) => {
   res.json({ message: 'GET all ${plural}' });
