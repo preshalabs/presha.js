@@ -28,19 +28,16 @@ Presha is a TypeScript-based backend framework that turns interfaces into fully 
 ```
 📦 presha.js/
 ├── core/                # Core logic for parsing, generating, and managing modules
-|   ├── cli/                 # CLI entry point and commands
+|   ├── cli/             # CLI entry point and commands
 │   ├── parser/          # ts-morph-based interface parser
 │   ├── generator/       # Generates zod, API routes, db models
 │   ├── runtime/         # Request handling, validation, routing
-│   ├── db/              # Abstract DB layer (Prisma, Drizzle)
-│   └── utils/           # Shared helpers
-├── templates/           # Jinja-style or string templates for generated code
-├── server/              # Express/Hono/Fastify core server runner
-├── sdk/                 # Client SDK generator (future)
-├── docs/                # Swagger/OpenAPI auto-generator (future)
-├── tests/               # Test auto-generator (future)
-├── examples/            # Example Presha projects
-└── index.ts             # Entrypoint for library users
+│   ├── types/           # Shared typescript interfaces
+│   |── utils/           # Shared helpers
+|   └── index.ts         # Entrypoint for library users
+├── docs/                # Nextra docs
+├── tests/               # Test core package
+└── examples/            # Example Presha projects
 ```
 
 ### ✅ Modular Layers (Separation of Concerns)
