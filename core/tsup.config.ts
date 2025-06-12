@@ -1,12 +1,12 @@
 import { defineConfig } from 'tsup';
 
 export default defineConfig({
-  entry: { index: 'cli/index.ts' },
-  format: ['cjs'],
+  entry: ['index.ts', 'cli/index.ts', 'runtime/express.ts'],
+  format: ['esm'],
   splitting: false,
   sourcemap: true,
   clean: true,
-  dts: false,
+  dts: true,
   target: 'node18',
   outDir: 'dist',
   banner: {
