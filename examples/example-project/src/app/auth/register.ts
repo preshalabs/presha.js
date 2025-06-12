@@ -1,4 +1,5 @@
 import type { User } from '@/domain/user';
+import type { RequestHandler } from 'presha/runtime/express';
 
 /**
  * Minimal registration route.
@@ -10,25 +11,26 @@ export const route = {
   method: 'POST',
   path: '/auth/register',
 
-  handler: async (ctx: any) => {
-    const body = (await ctx.json()) as Partial<User>;
+  handler: (async (req, res) => {
+    const body = req.body as Partial<User>;
 
     // Business logic: fake uniqueness check
     const emailAlreadyExists = body.email === 'admin@example.com';
     if (emailAlreadyExists) {
-      ctx.res.statusCode = 409;
-      return ctx.json({ error: 'Email already registered' });
+      res.statusCode = 409;
+      res.json({ error: 'Email already registered' });
+      return;
     }
 
     // TODO: Save user to database (stubbed here)
     const newUser: User = {
       id: 'generated-id',
       email: body.email!,
-      name: body.name ?? null,
+      name: body.name,
       createdAt: new Date(),
       updatedAt: new Date()
     };
 
-    return ctx.json(newUser);
-  }
+    res.json(newUser);
+  }) as RequestHandler
 };
