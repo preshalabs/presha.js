@@ -1,0 +1,13 @@
+import { <%= name %>Service } from '../services/<%= name.toLowerCase() %>.service'
+import { BaseController } from '../core/base/BaseController'
+
+export class <%= name %>Controller extends BaseController {
+  constructor(public service = new <%= name %>Service()) {
+    super()
+  }
+
+  get = async (req, res) => {
+    const items = await this.service.getAll()
+    res.json(items)
+  }
+}

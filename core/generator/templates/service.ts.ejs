@@ -1,0 +1,12 @@
+import { <%= name %>Repository } from '../repositories/<%= name.toLowerCase() %>.repository'
+import { BaseService } from '../core/base/BaseService'
+
+export class <%= name %>Service extends BaseService {
+  constructor(public repo = new <%= name %>Repository()) {
+    super()
+  }
+
+  async getAll() {
+    return this.repo.findAll()
+  }
+}
