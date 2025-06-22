@@ -1,6 +1,5 @@
 // core/DrizzleModel.ts
 
-import { ModelInterface } from './interfaces/ModelInterface.js';
 import { drizzle } from 'drizzle-orm/node-postgres';
 import { Pool } from 'pg';
 import {
