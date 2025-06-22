@@ -7,6 +7,22 @@
     "dev": "tsup --watch",
     "lint": "npx prettier . --write"
   },
+  "bin": {
+    "presha": "dist/cli/index.js"
+  },
+  "main": "dist/index.js",
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js",
+    "./runtime/express": {
+      "types": "./dist/runtime/express.d.ts",
+      "import": "./dist/runtime/express.js"
+    }
+  },
+  "files": [
+    "dist",
+    "generator/templates"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/preshalabs/presha.js.git"
@@ -17,17 +33,20 @@
     "url": "https://github.com/preshalabs/presha.js/issues"
   },
   "homepage": "https://github.com/preshalabs/presha.js#readme",
-  "bin": {
-    "presha": "./dist/index.js"
-  },
   "dependencies": {
     "commander": "^14.0.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
     "ts-morph": "^26.0.0",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "zod": "^3.25.62"
   },
   "devDependencies": {
     "@eslint/js": "^9.28.0",
+    "@types/ejs": "^3.1.5",
+    "@types/express": "^5.0.3",
     "@types/node": "^22.15.29",
+    "chokidar": "^4.0.3",
     "eslint": "^9.28.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.4.1",

@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "Cornerstone of presha.js framework development",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "build": "tsc",
     "dev": "presha dev",
-    "build": "presha build",
+    "generate": "presha build",
     "start": "presha start",
     "lint": "npx prettier . --write"
   },

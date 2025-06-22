@@ -1,0 +1,8 @@
+import { <%= name %> } from '../models/<%= name %>'
+import { db } from '../db'
+import { <%= name.toLowerCase() %>s } from '../schema'
+import { BaseRepository } from '../core/base/BaseRepository'
+
+export class <%= name %>Repository extends BaseRepository<<%= name %>> {
+  table = <%= name.toLowerCase() %>s
+}

@@ -1,0 +1,6 @@
+export interface <%= name %> {
+<% properties.forEach(prop => { -%>
+    <%= prop.name %><%= prop.optional ? '?' : '' %>: <%= prop.type %>;
+<% }) -%>
+}
+    

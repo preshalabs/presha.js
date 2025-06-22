@@ -1,4 +1,9 @@
-import type { User } from '@/domain/user';
+import type { RequestHandler } from 'presha/runtime/express';
+
+interface LoginRequest {
+  email: string;
+  password: string;
+}
 
 /**
  * Minimal login route.
@@ -9,15 +14,16 @@ export const route = {
   method: 'POST',
   path: '/auth/login',
 
-  handler: async (ctx: any) => {
-    const body = (await ctx.json()) as Partial<User>;
+  handler: (async (req, res) => {
+    const body = req.body as LoginRequest;
 
     // Business logic: fake login check
     if (body.email === 'admin@example.com' && body.password === 'password123') {
-      return ctx.json({ token: 'mock-jwt-token' });
+      res.json({ token: 'mock-jwt-token' });
+      return;
     }
 
-    ctx.res.statusCode = 401;
-    return ctx.json({ error: 'Invalid credentials' });
-  }
+    res.statusCode = 401;
+    res.json({ error: 'Invalid credentials' });
+  }) as RequestHandler
 };
