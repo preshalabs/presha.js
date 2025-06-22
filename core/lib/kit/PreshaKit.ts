@@ -5,8 +5,9 @@ import { PreshaRepository } from '../repository/PreshaRepository.js';
 import { PreshaRepositoryInterface } from '../repository/PreshaRepositoryInterface.js';
 import { PreshaService } from '../service/PreshaService.js';
 import { PreshaServiceInterface } from '../service/PreshaServiceInterface.js';
+import { PreshaKitInterface } from './PreshaKitInterface.js';
 
-export abstract class PreshaKit<T> {
+export abstract class PreshaKit<T> implements PreshaKitInterface<T> {
   public readonly model: PreshaModelInterface<T>;
   public readonly repository: PreshaRepositoryInterface<T>;
   public readonly service: PreshaServiceInterface<T>;
