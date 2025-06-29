@@ -13,27 +13,7 @@ import {
 } from 'drizzle-orm/pg-core';
 import { eq } from 'drizzle-orm';
 import { PreshaModelInterface } from './PreshaModelInterface.js';
-
-export type PreshaFieldType =
-  | 'string'
-  | 'number'
-  | 'boolean'
-  | 'uuid'
-  | 'timestamp'
-  | 'json';
-
-export interface PreshaField {
-  type: PreshaFieldType;
-  primary?: boolean;
-  unique?: boolean;
-  nullable?: boolean;
-  default?: any;
-}
-
-export interface DrizzleModelSchema {
-  name: string;
-  fields: Record<string, PreshaField>;
-}
+import { PreshaField, PreshaModelSchema } from '../types/PreshaSchema';
 
 // Database connection
 const pool = new Pool({
@@ -46,7 +26,7 @@ const db = drizzle(pool);
 
 // Helper function to convert PreshaField to Drizzle column
 function createDrizzleColumn(fieldName: string, field: PreshaField) {
-  const isNullable = field.nullable !== false;
+  // const isNullable = field.nullable !== false;
 
   switch (field.type) {
     case 'string':
@@ -66,14 +46,16 @@ function createDrizzleColumn(fieldName: string, field: PreshaField) {
   }
 }
 
-// MODEL SHOULD BE INTERFACE, so we can have like DrizzlePreshaModel, PrismaPreshaModel, SequelizePreshaModel, etc.
+// TODO: Need to introduce ts type for each model in order to get rid of any type, and accomplish full type safety.
+// Possible solutions:
+// based on schema
 
 export class DrizzleModel<T> implements PreshaModelInterface<T> {
   name: string;
   fields: Record<string, PreshaField>;
   private table: any;
 
-  constructor(schema: DrizzleModelSchema) {
+  constructor(schema: PreshaModelSchema) {
     this.name = schema.name;
     this.fields = schema.fields;
     this.table = this.createTable();
@@ -91,7 +73,7 @@ export class DrizzleModel<T> implements PreshaModelInterface<T> {
   }
 
   getPrimaryKey(): string | undefined {
-    return Object.entries(this.fields).find(([_, meta]) => meta.primary)?.[0];
+    return Object.entries(this.fields).find(([, meta]) => meta.primary)?.[0];
   }
 
   getFieldNames(): string[] {
@@ -102,17 +84,17 @@ export class DrizzleModel<T> implements PreshaModelInterface<T> {
     return this.fields[field];
   }
 
-  async create(data: any): Promise<any> {
+  async create(data: Partial<T>): Promise<T> {
     try {
       const result = await db.insert(this.table).values(data).returning();
-      return (result as any[])[0];
+      return result[0];
     } catch (error) {
       console.error(`Error creating ${this.name}:`, error);
       throw error;
     }
   }
 
-  async findById(id: string): Promise<any> {
+  async findById(id: string): Promise<T | null> {
     try {
       const primaryKey = this.getPrimaryKey();
       if (!primaryKey) {
@@ -130,7 +112,7 @@ export class DrizzleModel<T> implements PreshaModelInterface<T> {
     }
   }
 
-  async findAll(): Promise<any[]> {
+  async findAll(): Promise<T[]> {
     try {
       const result = await db.select().from(this.table);
       return result;
@@ -140,7 +122,7 @@ export class DrizzleModel<T> implements PreshaModelInterface<T> {
     }
   }
 
-  async update(id: string, data: any): Promise<any> {
+  async update(id: string, data: Partial<T>): Promise<T> {
     try {
       const primaryKey = this.getPrimaryKey();
       if (!primaryKey) {
@@ -153,7 +135,7 @@ export class DrizzleModel<T> implements PreshaModelInterface<T> {
         .where(eq(this.table[primaryKey], id))
         .returning();
 
-      return (result as any[])[0];
+      return result[0];
     } catch (error) {
       console.error(`Error updating ${this.name}:`, error);
       throw error;
